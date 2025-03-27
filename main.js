@@ -8,10 +8,6 @@ const gameBoard = {
     board: ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 };
 
-// Create both players
-const playerA = Player('Player A', 'X');
-const playerB = Player('Player B', 'O');
-
 // Function to print the game board
 const printBoard = () => {
     console.log(`${gameBoard.board[0]} | ${gameBoard.board[1]} | ${gameBoard.board[2]}`);
@@ -33,7 +29,7 @@ const takeTurn = (player) => {
 }
 
 // Will check if the game is over
-const gameOver = () => {
+const checkGameOver = () => {
     // Win logic
     if ((board[0] === board[1] && board[1] === board[2] && board[0] !== "-") ||
         (board[3] === board[4] && board[4] === board[5] && board[3] !== "-") ||
