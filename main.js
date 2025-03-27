@@ -4,13 +4,8 @@ import Player from './player.js';
 
 const gameBoard = {
 
-    // Create empty 2D array that represents a 3x3 grid with empty strings for each space
-    board: [
-        ['', '', ''],
-        ['', '', ''],
-        ['', '', '']
-
-    ]
+    // Create empty array that represents a 3x3 grid with empty strings for each space
+    board: ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 };
 
 // Create both players
