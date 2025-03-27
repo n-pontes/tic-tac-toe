@@ -19,6 +19,19 @@ const printBoard = () => {
     console.log(`${gameBoard.board[6]} | ${gameBoard.board[7]} | ${gameBoard.board[8]}`);
 }
 
+// Handles player turn
+const takeTurn = (player) => {
+    console.log(`${player}'s turn.`);
+    let position = prompt("Choose a position from 1-9:");
+    position -= 1;
+    while (position < 0 || position > 8 || gameBoard.board[position] !== "-") {
+        position = prompt("Invalid input or position already taken. Choose a different position:");
+        position -= 1;
+    } 
+    gameBoard.board[position] = player;
+    printBoard();
+}
+
 // Test the function
 printBoard();
 
