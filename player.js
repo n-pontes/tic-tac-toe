@@ -1,11 +1,7 @@
-// Player A
-
-const playerA = {
-
-}
-
-// Player B
-
-const playerB = {
-    
-}
+// Player factory function
+const Player = (name, marker) => {
+    return {
+        name: name,
+        marker: marker
+    };
+};
