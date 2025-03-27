@@ -31,18 +31,18 @@ const takeTurn = (player) => {
 // Will check if the game is over
 const checkGameOver = () => {
     // Win logic
-    if ((board[0] === board[1] && board[1] === board[2] && board[0] !== "-") ||
-        (board[3] === board[4] && board[4] === board[5] && board[3] !== "-") ||
-        (board[6] === board[7] && board[7] === board[8] && board[6] !== "-") ||
-        (board[0] === board[3] && board[3] === board[6] && board[0] !== "-") ||
-        (board[1] === board[4] && board[4] === board[7] && board[1] !== "-") ||
-        (board[2] === board[5] && board[5] === board[8] && board[2] !== "-") ||
-        (board[0] === board[4] && board[4] === board[8] && board[0] !== "-") ||
-        (board[2] === board[4] && board[4] === board[6] && board[2] !== "-")) {
+    if ((gameBoard.board[0] === gameBoard.board[1] && gameBoard.board[1] === gameBoard.board[2] && gameBoard.board[0] !== "-") ||
+        (gameBoard.board[3] === gameBoard.board[4] && gameBoard.board[4] === gameBoard.board[5] && gameBoard.board[3] !== "-") ||
+        (gameBoard.board[6] === gameBoard.board[7] && gameBoard.board[7] === gameBoard.board[8] && gameBoard.board[6] !== "-") ||
+        (gameBoard.board[0] === gameBoard.board[3] && gameBoard.board[3] === gameBoard.board[6] && gameBoard.board[0] !== "-") ||
+        (gameBoard.board[1] === gameBoard.board[4] && gameBoard.board[4] === gameBoard.board[7] && gameBoard.board[1] !== "-") ||
+        (gameBoard.board[2] === gameBoard.board[5] && gameBoard.board[5] === gameBoard.board[8] && gameBoard.board[2] !== "-") ||
+        (gameBoard.board[0] === gameBoard.board[4] && gameBoard.board[4] === gameBoard.board[8] && gameBoard.board[0] !== "-") ||
+        (gameBoard.board[2] === gameBoard.board[4] && gameBoard.board[4] === gameBoard.board[6] && gameBoard.board[2] !== "-")) {
         return "win";
     }
     // Check for a tie
-    else if (!board.includes("-")) {
+    else if (!gameBoard.board.includes("-")) {
         return "tie";
     }
     // Game is not over
