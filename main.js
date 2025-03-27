@@ -32,6 +32,16 @@ const takeTurn = (player) => {
     printBoard();
 }
 
+// Will check if the game is over
+const gameOver = () => {
+
+}
+
+// Plays the game - its the game logic
+const playGame = () => {
+
+}
+
 // Test the function
-printBoard();
+playGame();
 
