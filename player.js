@@ -5,3 +5,6 @@ const Player = (name, marker) => {
         marker: marker
     };
 };
+
+// Export Player
+export default Player;
