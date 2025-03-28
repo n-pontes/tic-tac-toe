@@ -73,7 +73,6 @@ const playGame = () => {
 
                 let gameResult = game.isGameOver();
                 if (gameResult === 'You won!') {
-                    console.log(`${player.currentPlayer} wins!`);
                     statusText.textContent = `${player.currentPlayer} wins!`;
                     game.endGame.gameOver = true;
                     // Update the score based on the winner
