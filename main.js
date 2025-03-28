@@ -79,10 +79,10 @@ const playGame = () => {
                     // Update the score based on the winner
                     if (player.currentPlayer === "X") {
                         game.playerXScore += 1;
-                        xScore.textContent = `X: ${game.playerXScore}`; // Update X's score in the DOM
+                        xScore.textContent = `${game.playerXScore}`; // Update X's score in the DOM
                     } else {
                         game.playerOScore += 1;
-                        oScore.textContent = `O: ${game.playerOScore}`; // Update O's score in the DOM
+                        oScore.textContent = `${game.playerOScore}`; // Update O's score in the DOM
                     }
                 } else if (gameResult === 'It is a tie!') {
                     console.log('It is a tie!');
