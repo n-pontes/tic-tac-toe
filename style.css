@@ -58,4 +58,22 @@ body {
   font-weight: bold;
   margin-top: 20px;
 }
+/* Restart button */
+#restartBtn {
+  margin-top: 20px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  background: #ff4757;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+  font-weight: 600;
+}
+
+#restartBtn:hover {
+  background: #ff6b81;
+  transform: scale(1.05);
+}
 
