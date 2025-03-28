@@ -54,15 +54,3 @@
   #root, #__next {
     isolation: isolate;
   }
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
-}
-
-hr {
-  width: 500px;
-  height: 3px;
-  background-color: black;
-}
-
