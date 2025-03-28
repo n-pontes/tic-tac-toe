@@ -1,6 +1,6 @@
-const getCells = (function() {
-    return cells = document.querySelectorAll(".cell");
-})();
+const getCells = ()  => {
+    return document.querySelectorAll(".cell");
+};
 
 // Wraps the gameBoard object in an IIFE (immediately invoked function expression)
 const gameBoard = (function (){

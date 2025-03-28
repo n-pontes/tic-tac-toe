@@ -1,6 +1,9 @@
 // Import everything from objectFactory.js
 import { getCells, gameBoard, player } from './objectFactory.js';
 
+// getCells is now a function that can be called to retrieve the cells
+const cells = getCells();
+
 const statusText = document.querySelector("#statusText");
 const restartBtn = document.querySelector("#restartBtn");
 
