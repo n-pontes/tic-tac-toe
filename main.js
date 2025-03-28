@@ -53,15 +53,18 @@ const mainFactory = () => {
     return { updateBoard, playerTurn, isGameOver };
 };
 
+// Store the factory function in a variable for easies access to its methods/functions
+const game = mainFactory();
+
 
 // Plays the game - game logic
 const playGame = () => {
-    updateBoard();
+    game.updateBoard();
     let currentPlayer = "X";
     gameOver = false;
     while(!gameOver) {
-        playerTurn(currentPlayer);
-        let gameResult = isGameOver();
+        game.playerTurn(currentPlayer);
+        let gameResult = game.isGameOver();
         if(gameResult === 'You won!') {
             console.log(`${currentPlayer} wins!`);
             gameOver = true;
