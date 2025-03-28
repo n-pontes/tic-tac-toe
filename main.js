@@ -1,3 +1,7 @@
+const cells = document.querySelectorAll(".cell");
+const statusText = document.querySelector("#statusText");
+const restartBtn = document.querySelector("#restartBtn");
+
 // Wraps the gameBoard object in an IIFE (immediately invoked function expression)
 const gameBoard = (function (){
     // Returns the array
