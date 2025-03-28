@@ -1,58 +1,45 @@
-/* Credits to Josh Comeau for the CSS Reset
+
+/* A Modern CSS Reset - Credits to Josh W. Comeau - https://www.joshwcomeau.com/css/custom-css-reset/*/
 
 /* 1. Use a more-intuitive box-sizing model */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* 2. Remove default margin */
-* {
-margin: 0;
+*{
+  margin: 0;
+  padding: 0;
 }
-
-/* 3. Enable keyword animations */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    interpolate-size: allow-keywords;
-  }
+body {
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: min(50px, 7%);
+  background: hsl(220, 15%, 12%);
+  color: hsl(0, 0%, 100%); /* Keeps text readable */
+}
+/* 6. Inherit fonts for form controls */
+input, button, textarea, select{
+  font: inherit;
+}
+/* 7. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6{
+  overflow-wrap: break-word;
+}
+/* 8. Improve line wrapping */
+p{
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6{
+  text-wrap: balance;
+}
+#root, #__next {
+  isolation: isolate;
 }
 
 body {
-  /* 4. Add accessible line-height */
-  line-height: 1.5;
-  /* 5. Improve text rendering */
-  -webkit-font-smoothing: antialiased;
-}
+  background: hsl(223, 9%, 18%);
 
-/* 6. Improve media defaults */
-img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
-}
-
-/* 7. Inherit fonts for form controls */
-input, button, textarea, select {
-  font: inherit;
-}
-
-/* 8. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
-}
-
-/* 9. Improve line wrapping */
-p {
-  text-wrap: pretty;
-}
-h1, h2, h3, h4, h5, h6 {
-  text-wrap: balance;
-} */
-
-/*
-  10. Create a root stacking context
-*/
-#root, #__next {
-  isolation: isolate;
 }
 .cell {
   width: 75px;
@@ -63,14 +50,19 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 50PX;
   cursor: pointer;
 }
+
 #gameContainer {
   font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
 }
+
 #cellContainer {
   display: grid;
   grid-template-columns: repeat(3, auto);
   width: 225px;
   margin: auto;
+}
+h1 {
+  color: white;
 }
 
