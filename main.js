@@ -57,8 +57,6 @@ const mainFactory = () => {
 // Store the factory function in a variable for easies access to its methods/functions
 const game = mainFactory();
 
-// let gameOver = false;
-
 // Plays the game - game logic
 const playGame = () => {
     game.updateBoard();
@@ -91,6 +89,48 @@ const playGame = () => {
     });
 };
 
+// Resets the game upon clicking on the reset button
+const restartGame = () => {
+
+    // Clicking on the button resets the game
+    restartBtn.addEventListener('click', () => {
+        game.endGame.gameOver = false;
+        gameBoard.board = ["-", "-", "-", "-", "-", "-", "-", "-", "-"];
+        game.updateBoard();
+
+        // The board is enabled and the game plays again
+        cells.forEach((cell, index) => {
+            cell.addEventListener('click', function handleClick() {
+                if (gameBoard.board[index] === "-" && !game.endGame.gameOver) {
+                    gameBoard.board[index] = player.currentPlayer;
+                    game.updateBoard();
+    
+                    let gameResult = game.isGameOver();
+                    if (gameResult === 'You won!') {
+                        console.log(`${player.currentPlayer} wins!`);
+                        statusText.textContent = `${player.currentPlayer} wins!`;
+                        game.endGame.gameOver = true;
+                    } else if (gameResult === 'It is a tie!') {
+                        console.log('It is a tie!');
+                        statusText.textContent = `It is a tie!`;
+                        game.endGame.gameOver= true;
+                    } else {
+                        game.switchPlayer();
+                    }
+                    // Disable further clicks once the game is over
+                    if (game.endGame.gameOver) {
+                        cells.forEach(cell => {
+                            cell.removeEventListener('click', handleClick);
+                        });
+                    }    
+                }
+            });
+        });
+    });
+};
 
 // Test the function
 playGame();
+
+// Resets the game upon clicking on the reset button
+restartGame();
