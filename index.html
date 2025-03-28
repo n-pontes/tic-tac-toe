@@ -4,27 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
+    <!-- <script src="main.js" defer></script> -->
     <title>Tic Tac Toe</title>
 </head>
 <body>
-    <h1>Tic Tac Toe</h1>
-    <div class="wrapper">
-        <div class="row">
+    <div id="gameContainer">
+        <h1>Tic Tac Toe</h1>
+        <!-- 3x3 grid -->
             <div class="cell" id="0"></div>
             <div class="cell" id="1"></div>
             <div class="cell" id="2"></div>
-        </div>
-        <div class="row">
             <div class="cell" id="3"></div>
             <div class="cell" id="4"></div>
             <div class="cell" id="5"></div>
-        </div>
-        <div class="row">
             <div class="cell" id="6"></div>
             <div class="cell" id="7"></div>
             <div class="cell" id="8"></div>
-        </div>
     </div>
+    <h2 id="statusText"></h2>
+    <button id="restartBtn">Restart</button>
 </body>
 </html>
