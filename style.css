@@ -52,11 +52,10 @@ body {
   background: #ddd;
   transform: scale(1.05);
 }
-#gameContainer {
-  font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
-}
-h1 {
-  color: white;
+/* Status message */
+#statusText {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 20px;
 }
 
