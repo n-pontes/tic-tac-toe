@@ -10,7 +10,6 @@
 <body>
     <div id="gameContainer">
         <h1>Tic Tac Toe</h1>
-        <h2 id="statusText"></h2>
         <div id="cellContainer">
             <!-- 3x3 grid -->
                 <div class="cell" id="0"></div>
@@ -23,10 +22,20 @@
                 <div class="cell" id="7"></div>
                 <div class="cell" id="8"></div>
         </div>
-        <h2 id="statusText"></h2>
         <button id="restartBtn">Restart</button>
-        <h3 id="xScore"></h3>
-        <h3 id="oScore"></h3>
+        <div id="gameEvent">
+            <h2 id="statusText">-</h2>
+        </div>
+        <div id="scoreboard">
+            <div class="score">
+                <h3>Player (X)</h3>
+                <p id="xScore">-</p>
+            </div>
+            <div class="score">
+                <h3>Computer (O)</h3>
+                <p id="oScore">-</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>

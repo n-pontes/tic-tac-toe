@@ -1,50 +1,28 @@
-
-/* A Modern CSS Reset - Credits to Josh W. Comeau - https://www.joshwcomeau.com/css/custom-css-reset/*/
-
-/* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
+/* Reset styles */
 *{
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
 }
-body {
-  /* 4. Improve text rendering */
-  -webkit-font-smoothing: antialiased;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: min(50px, 7%);
-  background: hsl(220, 15%, 12%);
-  color: hsl(0, 0%, 100%); /* Keeps text readable */
-}
-/* 6. Inherit fonts for form controls */
-input, button, textarea, select{
-  font: inherit;
-}
-/* 7. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6{
-  overflow-wrap: break-word;
-}
-/* 8. Improve line wrapping */
-p{
-  text-wrap: pretty;
-}
-h1, h2, h3, h4, h5, h6{
-  text-wrap: balance;
-}
-#root, #__next {
-  isolation: isolate;
+h1{
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-size: 3.4rem;
 }
 
 body {
   background: hsl(223, 9%, 18%);
 
 }
+
 .cell {
+  padding: 2em;
+  border-radius: 14px;
   width: 75px;
   height: 75px;
-  border: 1px solid black;
+  border:none;
   box-shadow: 0 0 0 2px;
   line-height: 75px;
   font-size: 50PX;
@@ -57,10 +35,12 @@ body {
 }
 
 #cellContainer {
+  border: ;
   display: grid;
+  gap: 10px;
   grid-template-columns: repeat(3, auto);
   width: 225px;
-  margin: auto;
+  align-items: center;
 }
 h1 {
   color: white;
