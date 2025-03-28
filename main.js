@@ -1,25 +1,6 @@
 const statusText = document.querySelector("#statusText");
 const restartBtn = document.querySelector("#restartBtn");
 
-const getCells = (function() {
-    return cells = document.querySelectorAll(".cell");
-})();
-
-// Wraps the gameBoard object in an IIFE (immediately invoked function expression)
-const gameBoard = (function (){
-    // Returns the array
-    return {
-        board: ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-    };
-})();
-
-// Wraps the player object in an IIFE
-const player = (function() {
-    return {
-        currentPlayer : "X"
-    }
-})();
-
 // Factory function - Encapsulates the game logic into a single object
 const mainFactory = () => {
 
