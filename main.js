@@ -52,27 +52,32 @@ const mainFactory = () => {
         } else {
             return 'Continue to play!';
         }
-    } 
+    }
+    // Toggles between "X" and "O"
+    const switchPlayer = () => {
+        player.currentPlayer = player.currentPlayer === "X" ? "O" : "X";
+    }
+    // IIFE function, serves the purpose to end the game when its truthy, currently set to false so the game can proceed
+    const endGame = (function() {
+        return {
+            gameOver : false
+        }
+    })();
     // Return all the functions as an object
-    return { updateBoard, isGameOver };
+    return { updateBoard, isGameOver, switchPlayer, endGame };
 };
 
 // Store the factory function in a variable for easies access to its methods/functions
 const game = mainFactory();
 
-// Toggles between "X" and "O"
-const switchPlayer = () => {
-    player.currentPlayer = player.currentPlayer === "X" ? "O" : "X";
-}
-
-let gameOver = false;
+// let gameOver = false;
 
 // Plays the game - game logic
 const playGame = () => {
     game.updateBoard();
     cells.forEach((cell, index) => {
         cell.addEventListener('click', function handleClick() {
-            if (gameBoard.board[index] === "-" && !gameOver) {
+            if (gameBoard.board[index] === "-" && !game.endGame.gameOver) {
                 gameBoard.board[index] = player.currentPlayer;
                 game.updateBoard();
 
@@ -80,16 +85,16 @@ const playGame = () => {
                 if (gameResult === 'You won!') {
                     console.log(`${player.currentPlayer} wins!`);
                     statusText.textContent = `${player.currentPlayer} wins!`;
-                    gameOver = true;
+                    game.endGame.gameOver = true;
                 } else if (gameResult === 'It is a tie!') {
                     console.log('It is a tie!');
-                    statusText.textContent = `${player.currentPlayer} wins!`;
-                    gameOver = true;
+                    statusText.textContent = `It is a tie!`;
+                    game.endGame.gameOver= true;
                 } else {
-                    switchPlayer();
+                    game.switchPlayer();
                 }
                 // Disable further clicks once the game is over
-                if (gameOver) {
+                if (game.endGame.gameOver) {
                     cells.forEach(cell => {
                         cell.removeEventListener('click', handleClick);
                     });
