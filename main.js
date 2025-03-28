@@ -6,9 +6,14 @@ const cells = getCells();
 
 const statusText = document.querySelector("#statusText");
 const restartBtn = document.querySelector("#restartBtn");
+const xScore = document.querySelector("#xScore");
+const oScore = document.querySelector("#oScore");
 
 // Factory function - Encapsulates the game logic into a single object
 const mainFactory = () => {
+
+    let playerXScore = 0; // Track score for "X"
+    let playerOScore = 0; // Track score for "O"
 
     // Updates the board, after every move
     const updateBoard = () => {
@@ -51,7 +56,7 @@ const mainFactory = () => {
         }
     })();
     // Return all the functions as an object
-    return { updateBoard, isGameOver, switchPlayer, endGame };
+    return { updateBoard, isGameOver, switchPlayer, endGame, playerXScore, playerOScore };
 };
 
 // Store the factory function in a variable for easies access to its methods/functions
@@ -71,6 +76,14 @@ const playGame = () => {
                     console.log(`${player.currentPlayer} wins!`);
                     statusText.textContent = `${player.currentPlayer} wins!`;
                     game.endGame.gameOver = true;
+                    // Update the score based on the winner
+                    if (player.currentPlayer === "X") {
+                        game.playerXScore += 1;
+                        xScore.textContent = `X: ${game.playerXScore}`; // Update X's score in the DOM
+                    } else {
+                        game.playerOScore += 1;
+                        oScore.textContent = `O: ${game.playerOScore}`; // Update O's score in the DOM
+                    }
                 } else if (gameResult === 'It is a tie!') {
                     console.log('It is a tie!');
                     statusText.textContent = `It is a tie!`;
