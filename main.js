@@ -1,3 +1,6 @@
+// Import everything from objectFactory.js
+import { getCells, gameBoard, player } from './objectFactory.js';
+
 const statusText = document.querySelector("#statusText");
 const restartBtn = document.querySelector("#restartBtn");
 
