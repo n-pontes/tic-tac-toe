@@ -1,10 +1,10 @@
-// Create the game board and an empty array
-
-const gameBoard = {
-
-    // Create empty array that represents a 3x3 grid with empty strings for each space
-    board: ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
-};
+// Wraps the gameBoard object in an IIFE (immediately invoked function expression)
+const gameBoard = (function (){
+    // Returns the array
+    return {
+        board: ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
+    };
+}());
 
 // Factory function - Encapsulates the game logic into a single object
 const mainFactory = () => {
