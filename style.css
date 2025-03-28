@@ -25,30 +25,36 @@ body {
   text-align: center;
   padding: 20px;
 }
-
-.cell {
-  padding: 2em;
-  border-radius: 14px;
-  width: 75px;
-  height: 75px;
-  border:none;
-  box-shadow: 0 0 0 2px;
-  line-height: 75px;
-  font-size: 50PX;
-  cursor: pointer;
+/* Game grid */
+#cellContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: min(90vw, 400px);
+  aspect-ratio: 1;
 }
-
+/* Cells styling */
+.cell {
+  background: white;
+  color: black;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+}
+.cell:hover {
+  background: #ddd;
+  transform: scale(1.05);
+}
 #gameContainer {
   font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
-}
-
-#cellContainer {
-  display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(3, auto);
-  width: 225px;
-  align-items: center;
 }
 h1 {
   color: white;
