@@ -117,12 +117,20 @@ body {
 footer {
   display: flex;
   justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
   width: 100%;
   color: white;
   text-align: center;
-}
-
-footer p {
-  font-weight: 550;
   margin-top: 0.6rem;
+}
+footer p {
+  font-weight: 500;
+}
+img {
+  width: 1.2rem;
+  height: 1.2rem;
+  color: white;
+  filter: invert(100%) brightness(200%);
 }
