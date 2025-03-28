@@ -7,7 +7,7 @@
 }
 /* Title */
 h1{
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.2rem;
   font-size: 2.6rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -29,8 +29,8 @@ body {
 #cellContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  width: min(90vw, 400px);
+  gap: 8px;
+  width: min(90vw, 390px);
   aspect-ratio: 1;
 }
 /* Cells styling */
@@ -113,4 +113,16 @@ body {
   font-weight: bold;
   color: white;
 }
+/* Footer */
+footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
 
+footer p {
+  font-weight: 550;
+  margin-top: 0.6rem;
+}
