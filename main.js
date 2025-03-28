@@ -109,7 +109,7 @@ const restartGame = () => {
         game.endGame.gameOver = false;
         gameBoard.board = ["-", "-", "-", "-", "-", "-", "-", "-", "-"];
         game.updateBoard();
-
+        statusText.textContent = '-';
         // The board is enabled and the game plays again
         cells.forEach((cell, index) => {
             cell.addEventListener('click', function handleClick() {
